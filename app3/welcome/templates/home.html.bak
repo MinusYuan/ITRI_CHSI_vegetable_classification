@@ -1,0 +1,41 @@
+{% load static %}
+
+{% block content %}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgriHyper ITRI 2022</title>
+</head>
+
+<body>
+<video id="myVideo" preload="auto" autoplay muted loop>
+    <source src="{% static "images/uav.mp4" %}" type="video/mp4">
+  </video>
+  <div class="main-content center">
+    <div id="web-intro" style="text-align: center; margin-top: 250px; padding: 10px;">
+      <h1>AgriHyper</h1>
+      <p>AgriHyper is an agiculture service website.</p>
+      <p>By Analyzing multi-spectral images and hyperspectral images,AgriHyper help our coustomers moitoring the
+        crops,especially in paddies.</p>
+    </div>
+    <div id="button-container" style="text-align: center; margin-top: 10%; padding: 10px;">
+		<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<input type="file" name="myfile_hdr" accept=".hdr" value=".hdr">
+		<input type="file" name="myfile_bsq" accept=".bsq" value=".bsq">
+		<button type="submit">Upload</button>
+		</form>
+
+    </div>
+  </div>
+</body>
+ 
+  <blockquote>
+    {% if image %}
+    <br>
+      	<img src="{% static "images/healthy_without_dust_I.png" %}" alt="My image" width="600" height="400">
+		<img src="{% static "images/healthy_without_dust_II.png" %}" alt="My image" width="600" height="400">
+		<img src="{% static "images/NDVI.png" %}" alt="My image" width="600" height="400">
+ 
+    {% endif %}
+  </blockquote> 
+{% endblock %}	
