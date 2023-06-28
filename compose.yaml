@@ -5,3 +5,16 @@ services:
       target: builder
     ports: 
       - '8080:8080'
+  web1: 
+    build:
+      context: app1
+      target: builder
+    deploy:
+      resources: 
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+    ports: 
+      - '8090:8090'
