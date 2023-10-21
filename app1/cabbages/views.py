@@ -23,8 +23,8 @@ sahi = get_SAHI_model()
 # Create your views here.
 def home(request):
     response={}
-    if request.method == 'POST'and request.FILES['myfile']:
-        myfile = request.FILES['myfile']
+    if request.method == 'POST' and request.FILES['file']:
+        myfile = request.FILES['file']
         
         fs = FileSystemStorage()
         myfile = fs.save(myfile.name, myfile)
@@ -37,6 +37,7 @@ def home(request):
         response['uploaded_file_url'] = uploaded_file_url
 
         # move file to target folder
+        os.makedirs('media/file/', exist_ok=True)
         shutil.move('media/' + myfile, 'media/file/' + myfile)
         counts, response['image'] = sahi.inference('media/file/'+myfile, slice=True)
         

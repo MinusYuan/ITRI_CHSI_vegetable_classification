@@ -5,11 +5,10 @@ EXPOSE 8090
 WORKDIR /app 
 COPY requirements.txt /app
 RUN pip3 install -r requirements.txt --no-cache-dir
-RUN apt update
-RUN apt install git ffmpeg libsm6 libxext6 sqlite3 -y
+RUN apt update && apt install git ffmpeg libsm6 libxext6 sqlite3 -y --fix-missing
 # RUN apt install git sqlite3 -y
 COPY . /app
 RUN python manage.py makemigrations
 RUN python manage.py migrate --run-syncdb 
 # ENTRYPOINT ["python3"] 
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8090"]
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8080"]

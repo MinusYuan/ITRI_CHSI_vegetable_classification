@@ -28,6 +28,7 @@ def home(request):
         response['uploaded_file_url'] = uploaded_file_url
 
         # move file to target folder
+        os.makedirs('media/file/', exist_ok=True)
         shutil.move('media/' + myfile0, 'media/file/' + myfile0)
         shutil.move('media/' + myfile1, 'media/file/' + myfile1)
         

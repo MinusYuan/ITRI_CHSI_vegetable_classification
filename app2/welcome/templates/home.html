@@ -10,15 +10,11 @@
 
   {% if uploaded_file_url %}
     <p>filename: {{ fileName }}</p>
-    <p>Chinese_Cabbages: {{ Chinese_Cabbages }}</p>
-    <p>Broccoli: {{ Broccoli }}</p>
-    <p>Cabbages: {{ Cabbages }}</p>
-    <p>Cauliflower: {{ Cauliflower }}</p>
-    <p>output image: {{ image }}</p>
   {% endif %}
 
   <blockquote>
     {% if image %}
+      image: {{ image }}<br>
       <img src="{{ image }}" alt="My image"> 
     {% endif %}
   </blockquote>

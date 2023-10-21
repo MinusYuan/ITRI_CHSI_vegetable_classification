@@ -1,11 +1,5 @@
 services:
-  web: 
-    build:
-      context: app3
-      target: builder
-    ports: 
-      - '8080:8080'
-  web1: 
+  app1: 
     build:
       context: app1
       target: builder
@@ -17,4 +11,16 @@ services:
             count: all
             capabilities: [gpu]
     ports: 
-      - '8090:8090'
+      - '8090:8080'
+  app2: 
+    build:
+      context: app2
+      target: builder
+    ports: 
+      - '8070:8080'
+  app3: 
+    build:
+      context: app3
+      target: builder
+    ports: 
+      - '8080:8080'
