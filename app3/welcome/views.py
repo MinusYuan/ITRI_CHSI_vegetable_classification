@@ -33,10 +33,9 @@ def home(request):
         shutil.move('media/' + myfile1, 'media/file/' + myfile1)
         
         hyper('media/file/' + myfile0,'media/file/' + myfile1)
-        pre1,pre2,ndvi = hyper('media/file/' + myfile0,'media/file/' + myfile1)
+        pre2,ndvi = hyper('media/file/' + myfile0,'media/file/' + myfile1)
         
-
-        response['pre1'] = pre1   
+  
         response['pre2'] = pre2
         response['ndvi'] = ndvi
         response['image'] = 'welcome\\HyperSpectralAnalysis_VegationIndex\\NDVI.png'

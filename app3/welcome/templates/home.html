@@ -32,12 +32,10 @@
   <blockquote>
     {% if image %}
     <br>
-      	<img src="{% static "images/healthy_without_dust_I.png" %}" alt="My image" width="1200" height="900">
-		<p>The Devastated Area Ratio is {{pre1}} %</p> 
 		<img src="{% static "images/healthy_without_dust_II.png" %}" alt="My image" width="1200" height="900">
-		<p>The Devastated Area Ratio is {{pre2}} %</p>
+		<p>The Devastated Area Ratio from prediction is {{pre2}} %</p>
 		<img src="{% static "images/NDVI.png" %}" alt="My image" width="1200" height="900">
-		<p>The Devastated Area Ratio is {{ndvi}} %</p>
+		<p>The Devastated Area Ratio from NVDI is {{ndvi}} %</p>
  
     {% endif %}
   </blockquote> 

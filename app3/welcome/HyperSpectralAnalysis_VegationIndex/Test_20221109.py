@@ -110,12 +110,12 @@ def hyper(path_hdr,path_bsq):
     ndvi_sum = round(ndvi_sum,2)
 ############################################################################################################
 ############################################################################################################
-    fig =plt.subplots(figsize=(24,16))
-    plt.title('healthy without dust I', fontsize=20)
-    plt.imshow(proba_healthy_without_dust0,cmap = plt.cm.nipy_spectral_r)
-    plt.colorbar()
+    # fig =plt.subplots(figsize=(24,16))
+    # plt.title('healthy without dust I', fontsize=20)
+    # plt.imshow(proba_healthy_without_dust0,cmap = plt.cm.nipy_spectral_r)
+    # plt.colorbar()
     #plt.grid()
-    plt.savefig('welcome/static/images/healthy_without_dust_I.png')
+    # plt.savefig('welcome/static/images/healthy_without_dust_I.png')
 #############################################################################################################
     fig =plt.subplots(figsize=(24,16))
     plt.title('healthy without dust II', fontsize=20)
@@ -129,4 +129,5 @@ def hyper(path_hdr,path_bsq):
     plt.colorbar()
     plt.savefig('welcome/static/images/NDVI.png')
 
-    return pre1_sum,pre2_sum,ndvi_sum
+    # return pre1_sum,pre2_sum,ndvi_sum
+    return pre2_sum,ndvi_sum
