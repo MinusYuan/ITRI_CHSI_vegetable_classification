@@ -23,8 +23,8 @@ sahi = get_SAHI_model()
 # Create your views here.
 def home(request):
     response={}
-    if request.method == 'POST' and request.FILES['file']:
-        myfile = request.FILES['file']
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
         
         fs = FileSystemStorage()
         myfile = fs.save(myfile.name, myfile)

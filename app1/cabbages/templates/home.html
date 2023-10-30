@@ -14,11 +14,11 @@
     <p>Broccoli: {{ Broccoli }}</p>
     <p>Cabbages: {{ Cabbages }}</p>
     <p>Cauliflower: {{ Cauliflower }}</p>
-    <p>output image: {{ image }}</p>
   {% endif %}
 
   <blockquote>
     {% if image %}
+	  <p>output image: {{ image }}</p>
       <img src="{{ image }}" alt="My image"> 
     {% endif %}
   </blockquote>

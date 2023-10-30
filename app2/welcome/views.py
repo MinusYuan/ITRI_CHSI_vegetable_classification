@@ -30,8 +30,8 @@ logging.debug("Logging started on %s for %s" % (logging.root.name, logging.getLe
 # Create your views here.
 def home(request):
     response={}
-    if request.method == 'POST' and request.FILES['file']:
-        myfile = request.FILES['file']
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
         
         fs = FileSystemStorage()
         myfile = fs.save(myfile.name, myfile)
